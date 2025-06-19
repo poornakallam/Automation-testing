@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 from email import encoders
 
 # CONFIG
-SENDER = "poornakallam414@gmail.com.com"
+SENDER = "poornakallam414@gmail.com"
 RECIPIENTS = ["poornakallam414@gmail.com"]
 AWS_REGION = "us-east-1"
 SUBJECT = "Automated Report"
