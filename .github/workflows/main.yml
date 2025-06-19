@@ -1,0 +1,34 @@
+name: Python with boto3
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-boto3-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'  # Or the version you need
+
+      - name: Install boto3
+        run: pip install boto3
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: ${{secrets.AWS_ROLE}}
+      - name: Run boto3 script
+        run: |
+          pwd
+          ls -al
+          zip -r reports.zip ./reports
+          python your_boto3_script.py
