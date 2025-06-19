@@ -9,7 +9,10 @@ on:
 jobs:
   run-boto3-script:
     runs-on: ubuntu-latest
-
+    permissions:
+      id-token: write
+      contents: write
+      packages: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
