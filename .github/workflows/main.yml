@@ -34,4 +34,4 @@ jobs:
           pwd
           ls -al
           zip -r reports.zip ./reports
-          python your_boto3_script.py
+          python sendmail.py

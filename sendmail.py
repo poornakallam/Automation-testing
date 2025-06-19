@@ -25,7 +25,7 @@ msg['To'] = ", ".join(RECIPIENTS)
 msg.attach(MIMEText(BODY_TEXT, 'plain'))
 
 # Attach the ZIP file
-with open("results.zip", "rb") as file:
+with open("reports.zip", "rb") as file:
     part = MIMEBase('application', 'zip')
     part.set_payload(file.read())
     encoders.encode_base64(part)
